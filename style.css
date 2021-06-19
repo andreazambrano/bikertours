@@ -24,7 +24,7 @@ Table of Contents
   
  *--------------------------------------------------------------*/
 :root {
-  --main-color:#dd0707;
+  --main-color:#E54444;
   --text-color:#3b3b3b;
   --heading-color:#000000;
   --light-gray:#eeeeee;
@@ -604,8 +604,8 @@ table.specifications tr:last-child td, table.specifications tr:last-child th {bo
 .features-middle-img img{max-height:700px;}
 
 .circle-animation{height: 100%; width: 100%; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 400px; max-height:400px;
-z-index: 0; opacity: 0.15; background:#dd0707;}
-.circle-animation:before, .circle-animation:after {content: ''; display: block; position: absolute; top: 0;  right: 0;  bottom: 0;  left: 0; border:20px solid #dd0707;
+z-index: 0; opacity: 0.15; background:#E54444;}
+.circle-animation:before, .circle-animation:after {content: ''; display: block; position: absolute; top: 0;  right: 0;  bottom: 0;  left: 0; border:20px solid #E54444;
   border-radius: 50%;}
 .circle-animation:before {animation: circleripple 4s linear infinite;}
 .circle-animation:after {animation: circleripple 4s linear 2s infinite;}
@@ -642,10 +642,10 @@ z-index: 0; opacity: 0.15; background:#dd0707;}
 .variation-section .owl-dots button.owl-dot.active:before{opacity:1; left:-40px; }
 
 
-.variation-section .owl-dots button.owl-dot.brown{background:#8d5a32;}
-.variation-section .owl-dots button.owl-dot.navy{background:#41637f;}
-.variation-section .owl-dots button.owl-dot.green{background:#78a01f;}
-.variation-section .owl-dots button.owl-dot.black{background:#464646;}
+.variation-section .owl-dots button.owl-dot.brown{background:#ECEDEF;}
+.variation-section .owl-dots button.owl-dot.navy{background:#E54444;}
+.variation-section .owl-dots button.owl-dot.green{background:#CBBA65;}
+.variation-section .owl-dots button.owl-dot.black{background:#434141;}
 
 .variation-section .owl-dots button.owl-dot.active{animation: ripple 1s linear infinite;  }
 
