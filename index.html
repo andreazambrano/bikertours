@@ -98,7 +98,7 @@
                                 <p>Unete a nuestra filosofia y estilo de vida <br />Viaja por todo México y explora sus carreteras <br /> Nosotros nos encargamos que llegues seguro a casa!
                                 </p>
                             </div>
-                            <a class="btn btn-primary btn-accent has-icon" href="#book-ride"><span>Conoce nuestras rutas</span><i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-primary btn-accent has-icon" href="#rutas"><span>Solicita una mémbresia</span><i class="fas fa-arrow-right"></i></a>
                             <a class="btn btn-secondary btn-accent has-icon" href="https://www.facebook.com/bikertours.mx" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-secondary btn-accent has-icon" href="https://www.instagram.com/bikertours/" target="_blank"><i class="fab fa-instagram"></i></a>
                              
@@ -120,10 +120,10 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="heading-wrapper">
-                                <h2 class="large-heading text-uppercase">Historia de Biker Tours... <br> <span> ¿Como comenzamos a rodar?</span> </h2>
+                                <h2 class="large-heading text-uppercase">Historia Biker Tours... <br> <span> ¿Como comenzamos?</span> </h2>
                             </div>
                             <div class="text-block text-center">
-                                <p>"Soy de la ciudad de México, pero crecí en él suerte, rodar con la familia, cruzando del sur al centro del país y pararnos a comer sobre la carretera fue algo con lo que crecí... Rodando he conocido historias y sazones a la leña que me han permitido ver y disfrutar la vida desde otra persectiva... Gracias al motociclismo he podido conectar con gente extraordinaría que disfruta de las cosas simples de la vida... un padre que busca cualquier pretexto para salir en su moto y una pareja con la cual disfruto los maravillosos paisajes que tiene México!"</p>
+                                <p>"Rodando he conocido historias y sazones a la leña que me han permitido ver y disfrutar la vida desde otra perspectiva... Gracias al motociclismo he podido conectar con gente extraordinaría que disfruta de las cosas simples de la vida... "</p>
                             </div>
 
                             
@@ -131,7 +131,7 @@
                                 
                                 <p> Pero también me ha enseñado, los miedos, mitos y desconocimientos que existen alrededor de los viajes en motocicleta, así como la gran desigualdad que hay en nuestro país, lugares con abundantes y maravillosos paisajes pero con tan limitados recursos; conocer a su gente me obligo a buscar ideas con las cuales poder viajar, rodar y ayudar! por esta razón y con la ayuda de un gran equipo, creamos Biker Tours! Trabajamos para conectar motociclistas, cuidar su camino co-crear experiencias, pero aún mejor ayudamos también a impulsar el turismo sostenible y conservación de las comunidades </p>
                                 
-                                <i>Aventura! No la búscamos... nosotros somos la experiencia.</i>
+                                
                                 
                             </div>
                             
@@ -553,7 +553,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <form class="style-2 transparent-field">
+                            <form id="contactFormInfo" class="style-2 transparent-field" method="GET">
                                 <div class="form-row">
                                     <div class="form-group col-lg-4 col-sm-6">
                                         <input type="text" name="full-name" class="form-control" placeholder="Ingrese su nombre" required="required">
@@ -602,7 +602,7 @@
                                     </div>
                                 </div>
                             </form>
-                        <h4>Gracias por dejar tus datos, te avisaremos cuando esté lista la membresía y por ser uno de los primeros llévate GRATIS la ruta al 1er Pueblo Mágico. Te vemos en la ruta….gaaaas! </h4>
+                        <h4>Te enviaremos GRATIS la ruta al 1er Pueblo Mágico de Mexico! Nos vemos en la ruta…. Gaaaaas! </h4>
                         </div>
                         
                     </div>
@@ -714,3 +714,20 @@
     <script src="js/custom.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+const url = "https://db.andesproadventures.com:3005/newBookAppToAdmin";
+fetch(url, {
+    method : "POST",
+    body: new FormData(document.getElementById("contactFormInfo")),
+    // -- or --
+    // body : JSON.stringify({
+        // user : document.getElementById('user').value,
+        // ...
+    // })
+}).then(
+    response => response.text() // .json(), etc.
+    // same as function(response) {return response.text();}
+).then(
+    html => console.log(html)
+);
+</script>
