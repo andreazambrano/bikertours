@@ -70,9 +70,11 @@
                                 <li><a href="#biker">Bikers</a></li>
                                 <li><a href="#dealer">Contactanos</a></li>
                             </ul>
-                            
+                            <ul class="header-social-media">
+                                <li><a href="https://www.facebook.com/bikertours.mx" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/bikertours/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
                         </nav>
-
                     </div>
                 </div>
             </div>
@@ -96,8 +98,8 @@
                                 <p>Unete a nuestra filosofia y estilo de vida <br />Viaja por todo México y explora sus carreteras <br /> Nosotros nos encargamos que llegues seguro a casa!
                                 </p>
                             </div>
-                            <a class="btn btn-primary btn-accent has-icon" href="#rutas"><span>Solicita mémbresia</span><i class="fas fa-arrow-right"></i></a>
-                            <a class="btn btn-secondary btn-accent has-icon" href="https://www.facebook.com/bikertours.mx/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-accent has-icon" href="#rutas"><span>Solicita una mémbresia</span><i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-secondary btn-accent has-icon" href="https://www.facebook.com/bikertours.mx" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-secondary btn-accent has-icon" href="https://www.instagram.com/bikertours/" target="_blank"><i class="fab fa-instagram"></i></a>
                              
                         </div>
@@ -650,7 +652,7 @@
                                 <div class="widget-contet">
                                     <div class="footer-social">
                                         <ul>
-                                            <li><a href="https://www.facebook.com/bikertours.mx/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://www.facebook.com/bikertours.mx" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="https://www.instagram.com/bikertours/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                             <li><a href="https://wa.me/529991572203"><i class="fab fa-whatsapp"></i></a></li>
                                         </ul>
@@ -703,7 +705,7 @@ async function postFormDataAsJson({ url, formData }) {
         body: formDataJsonString,
     };
 
-    const response = await fetch (exampleForm, fetchOptions);
+    const response = await fetch (url, fetchOptions);
 
     if (!response.ok) {
         const errorMessage = await response.text();
