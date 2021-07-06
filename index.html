@@ -703,7 +703,7 @@ async function postFormDataAsJson({ url, formData }) {
         body: formDataJsonString,
     };
 
-    const response = await fetch (exampleForm, fetchOptions);
+    const response = await fetch (url, fetchOptions);
 
     if (!response.ok) {
         const errorMessage = await response.text();
