@@ -73,7 +73,7 @@ a, .btn {-webkit-transition: all .3s;  transition: all .3s;}
 a img, iframe {border: none;}
 p {margin: 0 0 30px; /*color: var(--text-color);*/ line-height:1.5;}
 p:last-child{margin-bottom:0; }
-.text-lead, p.text-lead, .text-lead > *{font-size: 22px; line-height: 1.6;}
+.text-lead, p.text-lead, .text-lead > *{font-size: 25px; line-height: 1.6;}
 b, strong {font-weight: bold;}
 
 .empty-15{display:table; margin:auto; clear:both; height:15px;}
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {margin: 0 0 15px 0; color:
 .height-100 > *{height:100%; }
 .verticle-center .row{vertical-align:middle; align-items:center; height:100%; }
 .desktop-hidden{display:none !important; }
-.btn, input[type="button"], input[type="submit"], button, .btn-primary{color:var(--white-color); height:56px; line-height:50px; border:3px solid var(--black-color); font-size:1.175rem; padding:0px 45px; text-align:center; text-transform:uppercase; -webkit-border-radius:30px; border-radius:30px; font-weight:700; letter-spacing:1px; transition:all 300ms ease-in-out; -webkit-box-shadow:none; box-shadow:none; background:var(--black-color); position: relative; cursor:pointer;  }
+.btn, input[type="button"], input[type="submit"], button, .btn-primary{color:var(--white-color); height:56px; line-height:50px; border:3px solid var(--black-color); font-size:1.175rem; padding:0px 40px; text-align:center; text-transform:uppercase; -webkit-border-radius:30px; border-radius:30px; font-weight:700; letter-spacing:1px; transition:all 300ms ease-in-out; -webkit-box-shadow:none; box-shadow:none; background:var(--black-color); position: relative; cursor:pointer;  }
 .fw{width:100%;}
 
 .btn-primary{background:transparent; color:var(--black-color);}
@@ -323,7 +323,7 @@ h2.large-heading span{display:block; font-size:2.225rem; color:var(--main-color)
 .capability-slider{padding:0px 100px;}
 .cap-img{display:block;}
 .cap-img img{max-width:100%; vertical-align:top;}
-.cap-details{padding:15px 0px 0px;}
+.cap-details{padding:25px 20px 20px;}
 .cap-details h4{margin:0px 0px 10px 0px; font-weight:400; font-family: 'Poppins', sans-serif;}
 .capability-slider .owl-prev, .capability-slider .owl-next{position: absolute; top: 40%; left: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%);}
 .capability-slider .owl-next{right:0; left:auto; }
