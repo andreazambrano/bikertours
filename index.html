@@ -553,49 +553,23 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <form id="contactFormInfo" class="style-2 transparent-field" method="GET">
+                            <form id="contactFormInfo" class="style-2 transparent-field" action="https://ejemplo.frutmesuper.com:3029/ejemplo">
                                 <div class="form-row">
                                     <div class="form-group col-lg-4 col-sm-6">
-                                        <input type="text" name="full-name" class="form-control" placeholder="Ingrese su nombre" required="required">
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Ingrese su nombre" required="required">
                                     </div>
                                     <div class="form-group col-lg-4 col-sm-6">
-                                        <input type="email" name="email" class="form-control" placeholder="Dirección de email" required="required">
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="Dirección de email" required="required">
                                     </div>
                                     <div class="form-group col-lg-4 col-sm-6">
-                                        <input type="text" name="mobile" class="form-control" placeholder="Número del móvil" required="required">
+                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Número del móvil" required="required">
                                     </div>
-                                    <!-- <div class="form-group col-lg-4 col-sm-6">
-                                        <select class="form-control" name="country">
-                                            <option value="">Select Country</option>
-                                            <option value="Country 1">Country 1</option>
-                                            <option value="Country 2">Country 2</option>
-                                            <option value="Country 3">Country 3</option>
-                                            <option value="Country 4">Country 4</option>
-                                            <option value="Country 5">Country 5</option>
-                                        </select>
+                                     <div class="form-group col-lg-4 col-md-6">
+                                        <textarea id="messageSubject" name="messageSubject" placeholder="Asunto" class="form-control" name="comments"></textarea>
                                     </div>
-                                    <div class="form-group col-lg-4 col-sm-6">
-                                        <select class="form-control" name="state">
-                                            <option value="">Select State</option>
-                                            <option value="State 1">State 1</option>
-                                            <option value="State 2">State 2</option>
-                                            <option value="State 3">State 3</option>
-                                            <option value="State 4">State 4</option>
-                                            <option value="State 5">State 5</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-lg-4 col-sm-6">
-                                        <select class="form-control" name="city">
-                                            <option value="">Select City</option>
-                                            <option value="city 1">City 1</option>
-                                            <option value="city 2">City 2</option>
-                                            <option value="city 3">City 3</option>
-                                            <option value="city 4">City 4</option>
-                                            <option value="city 5">City 5</option>
-                                        </select>
-                                    </div> -->
+                                    
                                     <div class="form-group col-md-12">
-                                        <textarea placeholder="Reclamos o sugerencias" class="form-control" name="comments"></textarea>
+                                        <textarea id="message" name="message" placeholder="Reclamos o sugerencias" class="form-control" name="comments"></textarea>
                                     </div>
                                     <div class="form-group col-md-12 text-center">
                                         <input type="submit" value="Enviar">
@@ -715,19 +689,50 @@
 </body>
 </html>
 <script type="text/javascript">
-const url = "https://db.andesproadventures.com:3005/newBookAppToAdmin";
-fetch(url, {
-    method : "POST",
-    body: new FormData(document.getElementById("contactFormInfo")),
-    // -- or --
-    // body : JSON.stringify({
-        // user : document.getElementById('user').value,
-        // ...
-    // })
-}).then(
-    response => response.text() // .json(), etc.
-    // same as function(response) {return response.text();}
-).then(
-    html => console.log(html)
-);
+
+
+
+async function postFormDataAsJson({ url, formData }) {
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formDataJsonString = JSON.stringify(plainFormData);
+
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: formDataJsonString,
+    };
+
+    const response = await fetch (url, fetchOptions);
+
+    if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
+    }
+
+    return response.json();
+}
+
+
+async function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const url = form.action;
+
+    try {
+        const formData = new FormData(form);
+        const responseData = await postFormDataAsJson({ url, formData });
+
+        console.log({ responseData });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const exampleForm = document.getElementById("contactFormInfo");
+exampleForm.addEventListener("submit", handleFormSubmit);
+
 </script>
