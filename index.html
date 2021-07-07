@@ -551,7 +551,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <form id="contactFormInfo" class="style-2 transparent-field" action="https://email.buckapi.com:3029/ejemplo">
+                            <form id="contact" class="style-2 transparent-field" action="https://email.buckapi.com:3029/ejemplo">
                                 <div class="form-row">
                                     <div class="form-group col-lg-4 col-sm-6">
                                         <input type="text" id="name" name="name" class="form-control" placeholder="Ingrese su nombre" required="required">
@@ -570,7 +570,9 @@
                                         <textarea id="message" name="message" placeholder="Dinos que lugar te gustaria conocer" class="form-control" name="comments"></textarea>
                                     </div>
                                     <div class="form-group col-md-12 text-center">
+                                        
                                         <input type="submit" value="Enviar">
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -580,6 +582,24 @@
                     </div>
                 </div>
             </section>
+             <!-- <section  id="#gracias" class="feature-section black-bg light-text">
+                    <div class="container">
+                        <div class="row">
+                            
+                            <div class="col-lg-12 col-md-12">
+                                <div class="circle-animation wow fadeIn" data-wow-duration="1s" data-wow-delay="1s"></div>
+                                <div class="features-middle-img wow fadeInUpBig" data-wow-duration="2s">
+                                    <img src="images/motorcycle-features-img.png" alt="">
+                                    <h4>Te enviaremos GRATIS la ruta al 1er Pueblo Mágico de Mexico! Nos vemos en la ruta…. Gaaaaas! </h4>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>   -->
+           
+
+
             <!-- Find Dealer Section Start -->
             
             <!-- Find Dealer Section End -->
@@ -730,7 +750,7 @@ async function handleFormSubmit(event) {
     }
 }
 
-const exampleForm = document.getElementById("contactFormInfo");
+const exampleForm = document.getElementById("contact");
 exampleForm.addEventListener("submit", handleFormSubmit);
 
 </script>
